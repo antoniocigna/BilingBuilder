@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BilingBuilder - Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle; 
+  /*width: 95%;*/
+  /*height:95%;*/
+}
+/* Caption text */
+.text {
+  /*position: absolute;*/
+  text-align: center;
+  margin: auto; 
+}
+.cl_red  { color:red;  }
+.cl_black{ color:black;}
+.cl_blue { color:blue; }
+.cl_green { color:green; }
+.cl_bold {font-weight: bold;}
+.cl_big3   {font-size:3em;   } 
+.cl_big2   {font-size:2em;   } 
+.cl_big15   {font-size:1.5em;   } 
+.cl_big12   {font-size:1.2em;   } 
+.cl_big1   {font-size:1.0em;   } 
+.cl_big1   {font-size:0.8em;   } 
+.flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  font-size: 3em;
+  border: 0;  
+  background-color:transparent; /*background-color: white; */
+}
+.prev {
+ left: 0;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: red;
+}
+</style>
+</head>
+
+<body>
+<!--
+<div class="w3-center">
+	<span  style="font-size:2em;text-align:center;"><b>BilingBuilder</b></span>
+	<span style="font-size: 1em;text-align:center;margin:auto"><br>by<br>Antonio Cigna</span>
+</div>
+-->
+
+<div style="width:100%;">
+	<div id="id_filler1"  style="width=0px;">&nbsp;</div> 
+	<div id="id_container"  class="w3-center" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
+</div>
+<p id="debug1"></p>
+<script>
+	var win_w = screen.width;
+	var win_h = screen.height;  
+	var	containerW = (win_w*0.75).toFixed(0); 
+	var containerH = (win_h*0.85).toFixed(0);  
+	var	eleSlideW = (containerW*0.90).toFixed(0); 
+	var eleSlideH = (containerH*0.80).toFixed(0);  
+	var	eleInterW = (eleSlideW*0.90).toFixed(0); 
+	var eleInterH = (eleSlideH*0.90).toFixed(0);  
+	document.getElementById("id_filler1").style.width  = (win_w - containerW)+'px'; 	
+	document.getElementById("id_container").style.width  = containerW+'px'; 	 	
+	document.getElementById("id_container").style.height = containerH+'px'; 	 
+	document.getElementById("id_container").style.margin = "auto"; 
+	document.getElementById("id_container").style.overflow = "hidden"; 
+	
+	function myTxt(class1, txt1) {
+		return '<span class="' + class1 + '">' + txt1 + '</span>';
+	}
+	// -----------------
+	var righe_prese = "^" +		
+		"^" + "img/it_00_1_objPresentazione.png" + "|NONE" +  		
+		"^" + "IMG/it_01.png" + "|" + 
+				'<table style="width:100%;">' +
+					'<tr>' +
+						"<td>" +
+							myTxt("cl_blue cl_big15",
+								'<img src="IMG/f01_antotere.jpg" height="120" width="120">' +
+								'<img src="IMG/f02_puella.jpg"   height="120" width="120">'
+							) +
+						"</td>" +
+						"<td>" +
+							myTxt("cl_red cl_big2", "Migliora la comprensione di qualsiasi lingua straniera") +
+							myTxt("cl_blue cl_big15"	, "<br>leggendo le notizie del giorno") +
+							myTxt("cl_blue cl_big15", "<br>in un testo bilingue interlineare, interattivo e stampabile") +
+						"</td>" +
+						'<td>' + '<img src="IMG/f03_antosara.jpg" height="120" width="120">' +
+							'<img src="IMG/f04_casacani.jpg" height="120" width="120">' +
+						"</td>" +
+					"</tr>" +
+				"</table>" +		
+		"^" + "IMG/it_02.png" + "|" + 	myTxt("cl_blue cl_big15", "Crea <b>tu stesso</b> un testo "  ) +	
+										myTxt("cl_blue cl_big2", "<br><b>Interlineare</b> e <b>Interattivo</b><br>con le notizie del giorno") +
+										myTxt("cl_blue cl_big12","<br><br>ogni riga nella lingua originale è seguita dalla sua traduzione che appare a comando") +	
+		"^" + "IMG/demo_it_1.gif" + "|NONE" + 									
+		"^" + "IMG/it_03.png" + "|" + 	myTxt("cl_blue cl_big15"	, "<br>Click sul pulsante ") + 
+										myTxt("cl_red cl_big15 cl_bold", " rosso ") +
+										myTxt("cl_blue cl_big15", " per mostrare o nascondere la traduzione") +
+										myTxt("cl_blue cl_big12","<br><br>(esercizio: traduci senza aiuto e poi fai clic sul pulsante rosso per controllare)") +
+		"^" + "IMG/it_04.png" + "|" + 	myTxt("cl_blue cl_big15"	, "<br>Click sul pulsante ") + 
+										myTxt("cl_green cl_big15 cl_bold", " verde ") +
+										myTxt("cl_blue cl_big15", " per nascondere la riga della lingua originale") +
+										myTxt("cl_blue cl_big12","<br><br>(esercizio: fai clic sul pulsante verde e prova a ripetere a memoria con l'aiuto della traduzione, "+
+											"premi di nuovo per far riapparire la riga)") +					
+
+		"^" + "IMG/it_05.png" + "|" + myTxt("cl_blue cl_big12","<br>(esercizio: fai scomparire entrambe le righe e prova a ripetere a memoria)") +	
+		"^" + "IMG/it_06.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Per far riposare gli occhi hai la possibilità di cambiare lo sfondo o il colore dei caratteri") +		
+		"^" + "IMG/it_07.png" + "|" + 	myTxt("cl_blue cl_big2",  "<b>Interlineare e Stampabile</b>") +
+										myTxt("cl_blue cl_big15", "<br>testo") +
+										myTxt("c1_black cl_big15 cl_bold", " senza colori ") +										
+										myTxt("cl_blue cl_big15", "per una stampa veloce e una lettura rilassante") +	
+										myTxt("cl_blue cl_big15", "<br>(qui è mostrata un'anteprima del file da scaricare)") +	
+		"^" + "IMG/it_08.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>se ritieni che sia scritto troppo piccolo ") +
+										myTxt("cl_blue cl_big2", "<br>puoi raddoppiare o triplicare facilmente la dimensione del carattere.") +
+		"^" + "IMG/it_09.png" + "|" + 	myTxt("cl_blue cl_big2",  "<br>Funziona per qualunque lingua ") +
+		
+				"^" + "IMG/it_00_2_tradPresentazione.png" + "|"     +   
+							
+									'<div style="margin: auto; text-align:center; width:20%;  background-color:  #fefbd8;">'  +
+										'<ul style="text-align:left; ">' +
+											'<li><a href="BilingBuilder_Tutorial_it_1_BrowserChrome.html"       target="_blank">Guida 1 Traduci di Chrome  </a></li>' + 
+											'<li><a href="BilingBuilder_Tutorial_it_2_Bing.html"                target="_blank">Guida 2 Traduttore Bing    </a></li>' + 
+											'<li><a href="BilingBuilder_Tutorial_it_3_Google.html"              target="_blank">Guida 3 Traduttore Google  </a></li>' + 
+											'<li><a href="BilingBuilder_Tutorial_it_4_traduzioniEsistenti.html" target="_blank">Guida 4 Traduzioni Esistenti</a></li>' + 
+										'</ul>' +
+										'</div>'	+
+		"^" + "IMG/it_10.png" + "|" + 	myTxt("cl_blue cl_big12",  "BilingBuilder può anche essere usato come") +
+										myTxt("cl_blue cl_big2", "<br><b>Un aiuto per Memorizzare</b>")+
+										myTxt("cl_blue cl_big12", "<br> versi o brani di prosa") +
+										myTxt("cl_blue cl_big12", "<br>Il pulsante ") + myTxt("cl_green cl_big12 cl_bold", " verde ") + myTxt("cl_blue cl_big12", "") +
+										myTxt("cl_blue cl_big12", "nascondendo  o visualizzando a comando le righe può essere di aiuto nella memorizzazione") +		
+
+											'<br>&nbsp;' +
+											'<div style="margin: auto; text-align:center; width:20%;  background-color:  #fefbd8;">'  +
+													'<a href="BilingBuilder_Tutorial_it_5_memorizzazione.html"       target="_blank">Guida 5 Un Aiuto Per Memorizzare</a>' + 
+											'</div>'	+	
+		"^" + "IMG/it_00_3_envPresentazione.png" + "|NONE" +   
+		"^" + "IMG/it_00_4_privPresentazione.png" + "|NONE" +   	
+		
+		"^" + '<div style="margin: auto; text-align:center; vertical-align:middle; background:  #fefbd8 url(img/f05_canicatti.jpg) no-repeat fixed center;  ' + 
+					'border: 0.5em solid green; ' +
+					' width:90%; height:70%;' + 
+					' ">' +
+					
+					'<br>&nbsp;'.repeat(2) +    ' \n '+ 	
+				
+					'<div style="margin: auto; text-align:center; font-size:2em;  width:90%; height:90%; background:  #fefbd8; ">  \n' +
+						'<br>&nbsp;'.repeat(4) +    ' \n '+ 	
+						'<div style="margin: auto; text-align:center; width:60%;  " >' +
+							'<b>BilingBuilder Tutorial</b>  \n' + 
+							'<ul style="text-align:left;">  \n' +
+							'    <li><a href="BilingBuilder_Tutorial_it_0_presentazione.html"       target="_blank">Presentazione</a><br>&nbsp;</li> \n' + 
+							'    <li><a href="BilingBuilder_Tutorial_it_1_BrowserChrome.html"       target="_blank">Guida 1 - Traduci di Chrome  </a></li>' + 
+							'    <li><a href="BilingBuilder_Tutorial_it_2_Bing.html"                target="_blank">Guida 2 - Traduttore Bing    </a></li>' + 
+							'    <li><a href="BilingBuilder_Tutorial_it_3_Google.html"              target="_blank">Guida 3 - Traduttore Google  </a></li>' + 
+							'    <li><a href="BilingBuilder_Tutorial_it_4_traduzioniEsistenti.html" target="_blank">Guida 4 - Traduzioni Esistenti</a></li>' + 				
+							'    <li><a href="BilingBuilder_Tutorial_it_5_memorizzazione.html"      target="_blank">Guida 5 - Un Aiuto Per Memorizzare</a></li>' + 
+							'    <li><a href="BilingBuilder_Tutorial_it_6_Correzione.html"          target="_blank">Guida 6 - Come correggere i disallineamenti</a></li>' + 									
+							'    <li><a href="BilingBuilder_Tutorial_it_7_fileProdotti.html"        target="_blank">Guida 7 - I file bilingue interlineari</a></li>' + 	
+							'</ul> \n' +
+						'</div>' + 
+						'<br>&nbsp;'.repeat(3) +    ' \n '+ 	
+					'</div> \n ' + 
+				'<br>&nbsp;'.repeat(2) +    ' \n '+ 	
+			'</div>'	+ "|NONE" +  		
+					
+		"^" + "IMG/f05_canicatti.jpg" + "|" + 
+										myTxt("cl_blue cl_big12", "<br><br>Spero che questa applicazione sia utile a qualcuno") +
+										myTxt("cl_blue cl_big15", "<br><b>Antonio Cigna</b>") +
+										myTxt("cl_blue cl_big1",'<br><br>Qui sopra un collage di vecchie foto di ') + 										
+										myTxt("cl_blue cl_big1", "&nbsp;&nbsp;<b> Canicattì </b>"   + ' (<a href="http://www.canicatti-centrodoc.it" target="_blank">www.canicatti-centrodoc.it)</a>') +
+										myTxt("cl_blue cl_big1"," il paese della Sicilia in cui sono nato.") +										
+		"";
+	
+		
+	var righe_punti = "";
+	var righe_slide = "";
+	var lista_prese = righe_prese.trim().substring(1).split("^");
+	var numero_prese = lista_prese.length - 1;
+	
+	var iframe_conte="";
+	
+	for (var i = 1; i < numero_prese + 1; i++) {
+
+		var prese1 = lista_prese[i];
+		var cam1 = prese1.split("|");
+			src1 = cam1[0].trim();
+		txt1 = cam1[1].trim();
+				
+		if (src1.indexOf("div ")>= 0) {
+			content1 = src1;
+		} else {
+			if (src1.indexOf(".html") > 0) {
+				content1 = '<iframe id="iframe' + i + '" src="' + src1 + '"   width="' +
+					eleInterW + '" height="' + eleInterH + '"  ></iframe>';
+			} else {
+				content1 = '<img  class="center" src="' + src1 + '"  width="' +
+					eleInterW + '" height="' + eleInterH + '"    >';
+			}
+		}
+
+		righe_slide += '' +
+			'<div class="mySlides center"  \n' +
+			'   style="margin:auto; width:' + eleSlideW + 'px; height:' + eleSlideH +
+			'px; overflow=hidden;"> \n' +
+			'   <div style="margin:auto; border: 0.5em double gray;border-radius: 3em; padding-top: 1em; padding-bottom:1em;"> \n' +
+			'		' + content1 +
+			'   </div> \n' +
+			'   <div class="numbertext">' + i + " / " + numero_prese + '</div> \n' 	;
+		if (txt1 == "NONE") {
+			righe_slide += '' +
+				'<br>' +		
+				' <br> \n' +
+				'</div> \n\n';
+		} else { 	
+			righe_slide += '' +
+				'<br>' +
+				'   <div class="text center" style="height:10em; overflow: auto; border: 2px groove gray;border-radius: 25px;background-color:lightcyan;">' +
+				txt1 + '</div>  \n' +
+				' <br> \n' +
+				'</div> \n\n';
+		}		
+			
+	}
+	
+	var left_arrow = "&#10094;";  //  <    
+	var right_arrow ="&#10095;";  //  >		
+	//var left_arrow = "&#x1f8a8;"; //  shadowed left arrow   
+	//var right_arrow ="&#x1f8a9;"; //  shadowed right arrow    
+
+	righe_slide += '<button class="prev" onclick="plusDivs(-1)">' + left_arrow + '</button> \n' +
+		'<button class="next" onclick="plusDivs(1)">' + right_arrow + '</button> \n';
+
+	document.getElementById("id_container").innerHTML = righe_slide ;
+
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = x.length;
+		}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
+		
+	}
+
+</script>
+
+</body>
+</html>

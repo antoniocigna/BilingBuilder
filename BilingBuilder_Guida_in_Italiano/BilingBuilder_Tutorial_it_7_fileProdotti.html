@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BilingBuilder - Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle; 
+  /*width: 95%;*/
+  /*height:95%;*/
+}
+/* Caption text */
+.text {
+  /*position: absolute;*/
+  text-align: center;
+  margin: auto; 
+}
+.cl_red  { color:red;  }
+.cl_black{ color:black;}
+.cl_blue { color:blue; }
+.cl_green { color:green; }
+.cl_bold {font-weight: bold;}
+.cl_big3   {font-size:3em;   } 
+.cl_big2   {font-size:2em;   } 
+.cl_big15   {font-size:1.5em;   } 
+.cl_big12   {font-size:1.2em;   } 
+.cl_big1   {font-size:1.0em;   } 
+.cl_big1   {font-size:0.8em;   } 
+.flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  font-size: 3em;
+  border: 0;  
+  background-color:transparent; /*background-color: white; */
+}
+.prev {
+ left: 0;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: red;
+}
+</style>
+</head>
+
+<body>
+<!--
+<div class="w3-center">
+	<span  style="font-size:2em;text-align:center;"><b>BilingBuilder</b></span>
+	<span style="font-size: 1em;text-align:center;margin:auto"><br>by<br>Antonio Cigna</span>
+</div>
+-->
+
+<div style="width:100%;">
+	<div id="id_filler1"  style="width=0px;">&nbsp;</div> 
+	<div id="id_container"  class="w3-center" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
+</div>
+
+<script>
+	var win_w = screen.width;
+	var win_h = screen.height;  
+	var	containerW = (win_w*0.75).toFixed(0); 
+	var containerH = (win_h*0.85).toFixed(0);  
+	var	eleSlideW = (containerW*0.90).toFixed(0); 
+	var eleSlideH = (containerH*0.80).toFixed(0);  
+	var	eleInterW = (eleSlideW*0.90).toFixed(0); 
+	var eleInterH = (eleSlideH*0.90).toFixed(0);  
+	document.getElementById("id_filler1").style.width  = (win_w - containerW)+'px'; 	
+	document.getElementById("id_container").style.width  = containerW+'px'; 	 	
+	document.getElementById("id_container").style.height = containerH+'px'; 	 
+	document.getElementById("id_container").style.margin = "auto"; 
+	document.getElementById("id_container").style.overflow = "hidden"; 
+	
+	function myTxt(class1, txt1) {
+		return '<span class="' + class1 + '">' + txt1 + '</span>';
+	}
+	// -----------------
+	var righe_prese = "^" +					
+		"^" + "img/it_00_17_userguide.png" + "|NONE" +  	
+	
+		
+		"^" + "IMG/it_23.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Sono stati creati due file, uno interattivo ed uno stampabile") +
+										myTxt("cl_blue cl_big12", "<br>Entrambi sono visibili immediatamente oppure possono essere scaricati per essere usati in seguito") +
+										
+		"^" + "IMG/it_24.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Il file interattivo è tale sia in anteprima sia dopo essere stato scaricato") + 			
+		"^" + "IMG/it_25.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Questo è il contenuto del file stampabile") +
+		"^" + "IMG/it_26.png" + "|" +	myTxt("cl_blue cl_big12", "<br>I file possono essere scaricati cliccando su <b>download</b>") +
+		"^" + "IMG/it_27.png" + "|" + 	myTxt("cl_blue cl_big15", "<br>Forse ritieni che la dimensione dei caratteri sia troppo piccola per essere letta.") +
+										myTxt("cl_blue cl_big12", "<br>In questo caso puoi ingrandirli semplicemente rinominando il file prima della stampa.") +
+		"^" + "IMG/it_28.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Il nomi dei file scaricabili terminano con <b>_size</b>xx<b>.html</b>  dove xx è un numero con punto decimale") +
+										myTxt("cl_blue cl_big12", "<br>Il numero dopo <b> _size </b> indica di quanto deve essere moltiplicata la dimensione dei caratteri di base") +
+		"^" + "IMG/it_29.png" + "|" +   myTxt("cl_blue cl_big12", "<br>Per ingrandire i caratteri dopo il download  copia  il file appena scaricato") +
+		"^" + "IMG/it_30.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>rinomina la parte finale del nome file copiato") +
+		"^" + "IMG/it_31.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>nome file rinominato con finale <b>_size2.0.html</b>") +
+		"^" + "IMG/it_32.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Il risultato finale con le dimensioni dei caratteri raddoppiati") +		
+		"^" + "IMG/it_33.png" + "|" + 	myTxt("cl_blue cl_big12", "<br>Due versioni dello stesso file, l'aspetto diverso è dovuto al  nome file diverso") +	
+		
+	
+		"";
+	
+		
+	var righe_punti = "";
+	var righe_slide = "";
+	var lista_prese = righe_prese.trim().substring(1).split("^");
+	var numero_prese = lista_prese.length - 1;
+	
+	var iframe_conte="";
+	
+	for (var i = 1; i < numero_prese + 1; i++) {
+
+		var prese1 = lista_prese[i];
+		var cam1 = prese1.split("|");
+			src1 = cam1[0].trim();
+		txt1 = cam1[1].trim();
+		
+		if (src1.indexOf(".html") > 0) { 
+			content1 = '<iframe id="iframe'+i + '" src="' + src1 + '"   width="' + eleInterW + '" height="' + eleInterH + '"  ></iframe>';   
+		} else {
+			content1 = '<img  class="center" src="' + src1 + '"  width="' + eleInterW + '" height="' + eleInterH + '"    >' ;			
+		}		
+		
+		righe_slide += '' +
+			'<div class="mySlides center"  \n' +
+			'   style="margin:auto; width:' + eleSlideW + 'px; height:' + eleSlideH +
+			'px; overflow=hidden;"> \n' +
+			'   <div style="margin:auto; border: 0.5em double gray;border-radius: 3em; padding-top: 1em; padding-bottom:1em;"> \n' +
+			'		' + content1 +
+			'   </div> \n' +
+			'   <div class="numbertext">' + i + " / " + numero_prese + '</div> \n' 	;
+		if (txt1 == "NONE") {
+			righe_slide += '' +
+				'<br>' +		
+				' <br> \n' +
+				'</div> \n\n';
+		} else { 	
+			righe_slide += '' +
+				'<br>' +
+				'   <div class="text center" style="height:10em; overflow: auto; border: 2px groove gray;border-radius: 25px;background-color:lightcyan;">' +
+				txt1 + '</div>  \n' +
+				' <br> \n' +
+				'</div> \n\n';
+		}		
+	}
+	
+	var left_arrow = "&#10094;";  //  <    
+	var right_arrow ="&#10095;";  //  >		
+	//var left_arrow = "&#x1f8a8;"; //  shadowed left arrow   
+	//var right_arrow ="&#x1f8a9;"; //  shadowed right arrow    
+
+	righe_slide += '<button class="prev" onclick="plusDivs(-1)">' + left_arrow + '</button> \n' +
+		'<button class="next" onclick="plusDivs(1)">' + right_arrow + '</button> \n';
+
+	document.getElementById("id_container").innerHTML = righe_slide ;
+
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = x.length;
+		}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
+		
+	}
+
+</script>
+
+</body>
+</html>
