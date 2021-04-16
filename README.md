@@ -6,7 +6,7 @@ Each sentence in the original language is folllowed by its translation.
 ## Objective: 
   BilingBuilder is meant to be used as a learning tool:
   1. to improve the reading understanding in a foreign language 
-  2. to help to memorize  pieces of poetry or text by hiding and showing lines.   
+  2. to help memorize pieces of poetry or text by hiding and showing lines.   
 
 ## Output files
 It creates two html output files:
