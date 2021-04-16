@@ -40,7 +40,7 @@ In a few words you have to
 * all the code is in your computer and  all the files are written in the download folder of your computer.  
 
 ## Environment
-The code as been tested using:
+The code has been tested using:
 * Chrome, Edge, Firefox in Window 10 desktop 
 * Safari on Apple Notebook  
 
