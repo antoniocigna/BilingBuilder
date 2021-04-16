@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BilingBuilder - Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle; 
+  /*width: 95%;*/
+  /*height:95%;*/
+}
+/* Caption text */
+.text {
+  /*position: absolute;*/
+  text-align: center;
+  margin: auto; 
+}
+.cl_red  { color:red;  }
+.cl_black{ color:black;}
+.cl_blue { color:blue; }
+.cl_green { color:green; }
+.cl_bold {font-weight: bold;}
+.cl_big3   {font-size:3em;   } 
+.cl_big2   {font-size:2em;   } 
+.cl_big15   {font-size:1.5em;   } 
+.cl_big12   {font-size:1.2em;   } 
+.cl_big1   {font-size:1.0em;   } 
+.cl_big1   {font-size:0.8em;   } 
+.flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  font-size: 3em;
+  border: 0;  
+  background-color:transparent; /*background-color: white; */
+}
+.prev {
+ left: 0;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: red;
+}
+
+</style>
+</head>
+
+<body>
+<!--
+<div class="w3-center">
+	<span  style="font-size:2em;text-align:center;"><b>BilingBuilder</b></span>
+	<span style="font-size: 1em;text-align:center;margin:auto"><br>by<br>Antonio Cigna</span>
+</div>
+-->
+
+<div style="width:100%;">
+	<div id="id_filler1"  style="width=0px;">&nbsp;</div> 
+	<div id="id_container"  class="w3-center" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
+</div>
+
+<script>
+	var win_w = screen.width;
+	var win_h = screen.height;
+	var containerW = (win_w * 0.75).toFixed(0);
+	var containerH = (win_h * 0.85).toFixed(0);
+	var eleSlideW = (containerW * 0.90).toFixed(0);
+	var eleSlideH = (containerH * 0.80).toFixed(0);
+	var eleInterW = (eleSlideW * 0.90).toFixed(0);
+	var eleInterH = (eleSlideH * 0.90).toFixed(0);
+	document.getElementById("id_filler1").style.width = (win_w - containerW) + 'px';
+	document.getElementById("id_container").style.width = containerW + 'px';
+	document.getElementById("id_container").style.height = containerH + 'px';
+	document.getElementById("id_container").style.margin = "auto";
+	document.getElementById("id_container").style.overflow = "hidden";
+
+	function myTxt(class1, txt1) {
+		return '<span class="' + class1 + '">' + txt1 + '</span>';
+	}
+	// -----------------
+	var righe_prese = "^" +	
+	
+	
+		"^" + "img/en_00_12_userguide.png" + "|NONE" +  	
+		
+		"^" + "img/en_11.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br><br>double click on") + 
+								myTxt("cl_blue cl_big15", "<b> BilingBuilder.html </b>") +
+ 							
+		"^" + "img/en_12.png" + "|" + 
+								myTxt("cl_red cl_big2",   "<br> What to do?") +
+								myTxt("cl_blue cl_big15", "<br> You must enter title, address, text and translation by copy and paste"		) +
+								myTxt("cl_blue cl_big12", "<br> <br>This presentation assumes that the material to be translated is on the web, actually there is no limit" ) +				
+		
+		"^" + "img/en_13.png" + "|" + myTxt("cl_blue cl_big15", "Find and copy/paste title, address and text") +	
+		
+		"^" + "img/en_14.png" + "|" + myTxt("cl_blue cl_big15", "<br> Title, address and text have been pasted, the translation is missing" 	) +			
+					
+		"^" + "img/en_31.png" + "|" + 
+								myTxt("cl_blue cl_big12", "Not all browsers allow automatic page translation") +
+								myTxt("cl_blue cl_big12", "<br>If this function doesn't exist, you need to explicitly use an automatic  translator." +
+									"<br>In this part of the guide we use the <br> <b>Microsoft's Bing</b>"	) +
+								myTxt("cl_blue cl_big15", "<br> <br> I start by copying and pasting the title, the address and the text and then I press the <b> Run </b>" 	) +
+		"^" + "img/en_65.png" + "|" + 
+								myTxt("cl_blue cl_big12",	"<br>Since the translation is missing,  no misalignment errors can be found" +
+									"<br>so the preview of the interactive file is shown." ) +
+								myTxt("cl_blue cl_big15",   "<br> <br>To insert the missing translation, I press the <b> Correct </b> button" ) +
+		"^" + "img/en_33.png" + "|" + myTxt("cl_blue cl_big12",	"<br>we see that the text has been broken up into sentences each preceded by a progressive number." ) +	
+								myTxt("cl_blue cl_big15",	"<br><br>I select and copy the text " ) +	
+								myTxt("cl_blue cl_big12", "  to be able to paste it on the translator" )+
+							
+		"^" + "img/en_34.png" + "|" + myTxt("cl_blue cl_big12",	"<br>I start using Microsoft's Bing translator <b> bing.com/translator </b>" ) +
+		"^" + "img/en_35.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br>I paste the text on the left side of the page, the translation appears immediately on the right"		) +
+								myTxt("cl_blue cl_big12", "<br> <br> WARNING <b> Bing </b> translates a maximum of <b> 5000 </b> characters." +
+									"<br> If the text is longer, the translation <b> is not performed </b> (the right part of the page remains empty)." ) +
+								myTxt("cl_blue cl_big12", "<br> (if the text is longer you have to translate one piece at a time, " +
+									" note that the browser translator doesn't have this problem)" ) +
+		"^" + "img/en_36.png" + "|" + myTxt("cl_blue cl_big12", "<br>I click on the icon to copy the translation (this icon can be on bottom or on top)") +
+		"^" + "img/en_37.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br>After having clicked on the <b> copy icon</b>,  " + 
+									" I <b> paste</b> the translated text into the Translation part of the application " +
+									"<br>and then I press the <b>Run</b> button" ) +
+								myTxt("cl_blue cl_big12", "<br><br>The<b> Reset Texts </b> " + 
+									"button you see on the left can be used to cancel all the changes made to the texts after paste" )+								
+		
+		"^" + "img/en_40.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br>If the warnings are to be ignored (as in  this case)  press the <b>Preview</b> button to see the result." 	) +		
+								myTxt("cl_blue cl_big12", "<br><br>If there were errors,  to learn how to manage them please read ") +
+								myTxt("cl_blue cl_big15",	'<br>' + '<a href="BilingBuilder_Tutorial_en_6_correct_align.html"  target="_blank">User Guide 6 - How to correct misalignments</a>') + 			
+		"^" + "img/en_41.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br>Here is the preview of the interactive file") +		
+								myTxt("cl_blue cl_big12", "<br><br>To learn about the output produced please read ") +
+								myTxt("cl_blue cl_big15",	'<br>' + '<a href="BilingBuilder_Tutorial_en_7_the_output_files.html"  target="_blank">User Guide 7 - The Bilingual Output Files</a>') + 	
+		"";
+	var righe_punti = "";
+	var righe_slide = "";
+	var lista_prese = righe_prese.trim().substring(1).split("^");
+	var numero_prese = lista_prese.length - 1;
+
+	var iframe_conte = "";
+
+	for (var i = 1; i < numero_prese + 1; i++) {
+
+		var prese1 = lista_prese[i];
+		var cam1 = prese1.split("|");
+		src1 = cam1[0].trim();
+		txt1 = cam1[1].trim();
+
+		if (src1.indexOf(".html") > 0) {
+			content1 = '<iframe id="iframe' + i + '" src="' + src1 + '"   width="' +
+				eleInterW + '" height="' + eleInterH + '"  ></iframe>';
+		} else {
+			content1 = '<img  class="center" src="' + src1 + '"  width="' +
+				eleInterW + '" height="' + eleInterH + '"    >';
+		}
+
+		
+		righe_slide += '' +
+			'<div class="mySlides center"  \n' +
+			'   style="margin:auto; width:' + eleSlideW + 'px; height:' + eleSlideH +
+			'px; overflow=hidden;"> \n' +
+			'   <div style="margin:auto; border: 0.5em double gray;border-radius: 3em; padding-top: 1em; padding-bottom:1em;"> \n' +
+			'		' + content1 +
+			'   </div> \n' +
+			'   <div class="numbertext">' + i + " / " + numero_prese + '</div> \n' 	;
+		if (txt1 == "NONE") {
+			righe_slide += '' +
+				'<br>' +		
+				' <br> \n' +
+				'</div> \n\n';
+		} else { 	
+			righe_slide += '' +
+				'<br>' +
+				'   <div class="text center" style="height:10em; overflow: auto; border: 2px groove gray;border-radius: 25px;background-color:lightcyan;">' +
+				txt1 + '</div>  \n' +
+				' <br> \n' +
+				'</div> \n\n';
+		}		
+			
+			
+			
+	}
+
+	var left_arrow = "&#10094;"; //  <    
+	var right_arrow = "&#10095;"; //  >		
+	//var left_arrow = "&#x1f8a8;"; //  shadowed left arrow   
+	//var right_arrow ="&#x1f8a9;"; //  shadowed right arrow    
+
+	righe_slide += '<button class="prev" onclick="plusDivs(-1)">' + left_arrow +
+		'</button> \n' +
+		'<button class="next" onclick="plusDivs(1)">' + right_arrow +
+		'</button> \n';
+
+	document.getElementById("id_container").innerHTML = righe_slide;
+
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = x.length;
+		}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
+
+	}
+</script>
+
+</body>
+</html>

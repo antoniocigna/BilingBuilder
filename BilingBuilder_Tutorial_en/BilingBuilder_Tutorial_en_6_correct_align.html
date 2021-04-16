@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BilingBuilder - Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle; 
+  /*width: 95%;*/
+  /*height:95%;*/
+}
+/* Caption text */
+.text {
+  /*position: absolute;*/
+  text-align: center;
+  margin: auto; 
+}
+.cl_red  { color:red;  }
+.cl_black{ color:black;}
+.cl_blue { color:blue; }
+.cl_green { color:green; }
+.cl_bold {font-weight: bold;}
+.cl_big3   {font-size:3em;   } 
+.cl_big2   {font-size:2em;   } 
+.cl_big15   {font-size:1.5em;   } 
+.cl_big12   {font-size:1.2em;   } 
+.cl_big1   {font-size:1.0em;   } 
+.cl_big1   {font-size:0.8em;   } 
+.flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  font-size: 3em;
+  border: 0;  
+  background-color:transparent; /*background-color: white; */
+}
+.prev {
+ left: 0;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: red;
+}
+
+</style>
+</head>
+
+<body>
+<!--
+<div class="w3-center">
+	<span  style="font-size:2em;text-align:center;"><b>BilingBuilder</b></span>
+	<span style="font-size: 1em;text-align:center;margin:auto"><br>by<br>Antonio Cigna</span>
+</div>
+-->
+
+<div style="width:100%;">
+	<div id="id_filler1"  style="width=0px;">&nbsp;</div> 
+	<div id="id_container"  class="w3-center" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
+</div>
+
+<script>
+	var win_w = screen.width;
+	var win_h = screen.height;
+	var containerW = (win_w * 0.75).toFixed(0);
+	var containerH = (win_h * 0.85).toFixed(0);
+	var eleSlideW = (containerW * 0.90).toFixed(0);
+	var eleSlideH = (containerH * 0.80).toFixed(0);
+	var eleInterW = (eleSlideW * 0.90).toFixed(0);
+	var eleInterH = (eleSlideH * 0.90).toFixed(0);
+	document.getElementById("id_filler1").style.width = (win_w - containerW) + 'px';
+	document.getElementById("id_container").style.width = containerW + 'px';
+	document.getElementById("id_container").style.height = containerH + 'px';
+	document.getElementById("id_container").style.margin = "auto";
+	document.getElementById("id_container").style.overflow = "hidden";
+
+	function myTxt(class1, txt1) {
+		return '<span class="' + class1 + '">' + txt1 + '</span>';
+	}
+	// -----------------
+	var righe_prese = "^" +	
+	
+	
+		"^" + "img/en_00_16_userguide.png" + "|NONE" +  
+		"^" + "img/en_50.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br>1n case of alignment problems what should I do?" + 
+									"<br>Let's look at the <b>Fixing Tips</b>" 	) +									
+								'<br><br>' +	
+								myTxt("cl_blue cl_big12","this part of guide uses the same texts as " +   
+										'<a href="BilingBuilder_Tutorial_en_4_usingProfTran.html"  target="_blank">user Guide 4 Existing Translation    </a>') +
+									
+								
+		"^" + "img/en_39.png" + "|" + 							
+								myTxt("cl_blue cl_big12" ,  "<br>In order to correct misalignments you need to use " ) +
+								myTxt("cl_red cl_big12"  ,  "<b> (. </b> " ) +
+								myTxt("cl_black cl_big12",  "&nbsp;&nbsp;&nbsp;&nbsp;open parenthesis and period."	) +
+								myTxt("cl_blue cl_big15" ,  "<br>To break a line " )+
+								myTxt("cl_blue cl_big12" ,  " enter <b> (. </b> at the point where you want to wrap" ) +			 
+								myTxt("cl_blue cl_big15" ,  "<br>To join two consecutive lines" ) +  													
+								myTxt("cl_blue cl_big12" ,  ",  remove the initial part from the second line consisting of <b> (. </b> number <b>)) </b>" +
+									 "<br> eg. (.0025)) &nbsp;&nbsp;a number preceded by an open parenthesis and period and followed by two closed parentheses."	) +							
+								myTxt("cl_blue cl_big12",  "<br>TIP: It is best to make one correction at a time: after each correction, press the <b> Run </b> button" ) +	
+									
+		"^" + "img/en_50.png" + "|" + 
+								myTxt("cl_blue cl_big12","<br> I consider the first reports.") +
+								myTxt("cl_blue cl_big12",  "<br> The lines ((0025)) have no problem (false alarm)") +
+								myTxt("cl_blue cl_big12",  "<br> lines ((0039)) and ((0040)) have different length sentences (incorrectly split text)" ) +
+								myTxt("cl_blue cl_big12",  "<br> I'm going to look at these lines in both versions. I press the <b> Correct </b>" 	) +
+								
+				
+								
+		"^" + "img/en_51.png" + "|" + myTxt("cl_blue cl_big12",	"<br> I see that translated lines 39 and 40 start with quotes that actually belong to the previous line" ) +
+		"^" + "img/en_52.png" + "|" + 
+								myTxt("cl_blue cl_big12", "<br> I append line 39 to 38 and move the brackets-period pair (which serve to mark the beginning of the line)" + 
+									" after the quotation marks that close the previous sentence. ") +
+		"^" + "img/en_53.png" + "|" + myTxt("cl_blue cl_big12",	"<br> I moved <b> (. </b> after the quotation marks, leaving out the number and closing brackets" +
+								"<br>I press the <b> Run </b> button.") +
+		"^" + "img/en_54.png" + "|" + myTxt("cl_blue cl_big12",	"<br> Lines 39 and 40 are still misaligned, I press <b> Correct </b> again.)" 		) +
+		"^" + "img/en_55.png" + "|" + myTxt("cl_blue cl_big12",	"<br> Line 39 of the translation must clearly continue with the next") +
+		"^" + "img/en_56.png" + "|" + myTxt("cl_blue cl_big12",	"<br> In the translation I append lines 40 to 39") +
+		"^" + "img/en_57.png" + "|" + myTxt("cl_blue cl_big12",	"<br> I have moved <b> (. </b> not only in translation, but also in original. <br> I continue with <b> Run </b>") +
+		"^" + "img/en_58.png" + "|" + myTxt("cl_blue cl_big12",	"<br> The residual differences reported are not important, so I press <b> Preview </b> to see the result"		) +
+		
+	
+		"";
+	var righe_punti = "";
+	var righe_slide = "";
+	var lista_prese = righe_prese.trim().substring(1).split("^");
+	var numero_prese = lista_prese.length - 1;
+
+	var iframe_conte = "";
+
+	for (var i = 1; i < numero_prese + 1; i++) {
+
+		var prese1 = lista_prese[i];
+		var cam1 = prese1.split("|");
+		src1 = cam1[0].trim();
+		txt1 = cam1[1].trim();
+
+		if (src1.indexOf(".html") > 0) {
+			content1 = '<iframe id="iframe' + i + '" src="' + src1 + '"   width="' +
+				eleInterW + '" height="' + eleInterH + '"  ></iframe>';
+		} else {
+			content1 = '<img  class="center" src="' + src1 + '"  width="' +
+				eleInterW + '" height="' + eleInterH + '"    >';
+		}
+
+		
+		righe_slide += '' +
+			'<div class="mySlides center"  \n' +
+			'   style="margin:auto; width:' + eleSlideW + 'px; height:' + eleSlideH +
+			'px; overflow=hidden;"> \n' +
+			'   <div style="margin:auto; border: 0.5em double gray;border-radius: 3em; padding-top: 1em; padding-bottom:1em;"> \n' +
+			'		' + content1 +
+			'   </div> \n' +
+			'   <div class="numbertext">' + i + " / " + numero_prese + '</div> \n' 	;
+		if (txt1 == "NONE") {
+			righe_slide += '' +
+				'<br>' +		
+				' <br> \n' +
+				'</div> \n\n';
+		} else { 	
+			righe_slide += '' +
+				'<br>' +
+				'   <div class="text center" style="height:10em; overflow: auto; border: 2px groove gray;border-radius: 25px;background-color:lightcyan;">' +
+				txt1 + '</div>  \n' +
+				' <br> \n' +
+				'</div> \n\n';
+		}		
+			
+			
+			
+	}
+
+	var left_arrow = "&#10094;"; //  <    
+	var right_arrow = "&#10095;"; //  >		
+	//var left_arrow = "&#x1f8a8;"; //  shadowed left arrow   
+	//var right_arrow ="&#x1f8a9;"; //  shadowed right arrow    
+
+	righe_slide += '<button class="prev" onclick="plusDivs(-1)">' + left_arrow +
+		'</button> \n' +
+		'<button class="next" onclick="plusDivs(1)">' + right_arrow +
+		'</button> \n';
+
+	document.getElementById("id_container").innerHTML = righe_slide;
+
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = x.length;
+		}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
+
+	}
+</script>
+
+</body>
+</html>

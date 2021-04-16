@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BilingBuilder - Tutorial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.mySlides {display:none;}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle; 
+  /*width: 95%;*/
+  /*height:95%;*/
+}
+/* Caption text */
+.text {
+  /*position: absolute;*/
+  text-align: center;
+  margin: auto; 
+}
+.cl_red  { color:red;  }
+.cl_black{ color:black;}
+.cl_blue { color:blue; }
+.cl_green { color:green; }
+.cl_bold {font-weight: bold;}
+.cl_big3   {font-size:3em;   } 
+.cl_big2   {font-size:2em;   } 
+.cl_big15   {font-size:1.5em;   } 
+.cl_big12   {font-size:1.2em;   } 
+.cl_big1   {font-size:1.0em;   } 
+.cl_big1   {font-size:0.8em;   } 
+.flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  font-size: 3em;
+  border: 0;  
+  background-color:transparent; /*background-color: white; */
+}
+.prev {
+ left: 0;
+}
+.next {
+  right: 0;
+}
+.prev:hover, .next:hover {
+  color: red;
+}
+
+</style>
+</head>
+
+<body>
+<!--
+<div class="w3-center">
+	<span  style="font-size:2em;text-align:center;"><b>BilingBuilder</b></span>
+	<span style="font-size: 1em;text-align:center;margin:auto"><br>by<br>Antonio Cigna</span>
+</div>
+-->
+
+<div style="width:100%;">
+	<div id="id_filler1"  style="width=0px;">&nbsp;</div> 
+	<div id="id_container"  class="w3-center" style="text-align: center; margin-left: auto; margin-right: auto;"></div>
+</div>
+
+<script>
+	var win_w = screen.width;
+	var win_h = screen.height;
+	var containerW = (win_w * 0.75).toFixed(0);
+	var containerH = (win_h * 0.85).toFixed(0);
+	var eleSlideW = (containerW * 0.90).toFixed(0);
+	var eleSlideH = (containerH * 0.80).toFixed(0);
+	var eleInterW = (eleSlideW * 0.90).toFixed(0);
+	var eleInterH = (eleSlideH * 0.90).toFixed(0);
+	document.getElementById("id_filler1").style.width = (win_w - containerW) + 'px';
+	document.getElementById("id_container").style.width = containerW + 'px';
+	document.getElementById("id_container").style.height = containerH + 'px';
+	document.getElementById("id_container").style.margin = "auto";
+	document.getElementById("id_container").style.overflow = "hidden";
+
+	function myTxt(class1, txt1) {
+		return '<span class="' + class1 + '">' + txt1 + '</span>';
+	}
+	// -----------------
+	var righe_prese = "^" +	
+	
+	
+		"^" + "img/en_00_15_userguide.png" + "|NONE" +  
+		"^" + "img/en_61.png" + "|" + myTxt("cl_blue cl_big12",	"<br> Now let's try to use the application as ") +
+								myTxt("cl_blue cl_big15", "<br> <b>a memorization aid</b>") +
+								myTxt("cl_blue cl_big12", "<br> Suppose we want to memorize the beginning of the Melville's Moby Dick."	) +
+								myTxt("cl_blue cl_big12", "<br> We search for it on the web, copy it and then press <b> Run </b> to see the result immediately" ) +		"^" + "img/en_62.png" + "|" + myTxt("cl_blue cl_big12", 	"<br> I can use the green key to hide or show the single line") +
+								myTxt("cl_blue cl_big12",    		"<br> But maybe the sentences are too long to memorize, it is better to break them into more manageable pieces"	) +
+								myTxt("cl_blue cl_big12",    		"<br> The <b> Correct </b> key allows us to break the lines where we see fits best"		) +
+		"^" + "img/en_63.png" + "|" + myTxt("cl_blue cl_big12",		"<br> We insert the pair <b> (. </b> where we want to wrap") +
+		"^" + "img/en_64.png" + "|" + myTxt("cl_blue cl_big12",  	"<br> The result with shorter lines") +
+
+		"";
+	var righe_punti = "";
+	var righe_slide = "";
+	var lista_prese = righe_prese.trim().substring(1).split("^");
+	var numero_prese = lista_prese.length - 1;
+
+	var iframe_conte = "";
+
+	for (var i = 1; i < numero_prese + 1; i++) {
+
+		var prese1 = lista_prese[i];
+		var cam1 = prese1.split("|");
+		src1 = cam1[0].trim();
+		txt1 = cam1[1].trim();
+
+		if (src1.indexOf(".html") > 0) {
+			content1 = '<iframe id="iframe' + i + '" src="' + src1 + '"   width="' +
+				eleInterW + '" height="' + eleInterH + '"  ></iframe>';
+		} else {
+			content1 = '<img  class="center" src="' + src1 + '"  width="' +
+				eleInterW + '" height="' + eleInterH + '"    >';
+		}
+
+		
+		righe_slide += '' +
+			'<div class="mySlides center"  \n' +
+			'   style="margin:auto; width:' + eleSlideW + 'px; height:' + eleSlideH +
+			'px; overflow=hidden;"> \n' +
+			'   <div style="margin:auto; border: 0.5em double gray;border-radius: 3em; padding-top: 1em; padding-bottom:1em;"> \n' +
+			'		' + content1 +
+			'   </div> \n' +
+			'   <div class="numbertext">' + i + " / " + numero_prese + '</div> \n' 	;
+		if (txt1 == "NONE") {
+			righe_slide += '' +
+				'<br>' +		
+				' <br> \n' +
+				'</div> \n\n';
+		} else { 	
+			righe_slide += '' +
+				'<br>' +
+				'   <div class="text center" style="height:10em; overflow: auto; border: 2px groove gray;border-radius: 25px;background-color:lightcyan;">' +
+				txt1 + '</div>  \n' +
+				' <br> \n' +
+				'</div> \n\n';
+		}		
+			
+			
+			
+	}
+
+	var left_arrow = "&#10094;"; //  <    
+	var right_arrow = "&#10095;"; //  >		
+	//var left_arrow = "&#x1f8a8;"; //  shadowed left arrow   
+	//var right_arrow ="&#x1f8a9;"; //  shadowed right arrow    
+
+	righe_slide += '<button class="prev" onclick="plusDivs(-1)">' + left_arrow +
+		'</button> \n' +
+		'<button class="next" onclick="plusDivs(1)">' + right_arrow +
+		'</button> \n';
+
+	document.getElementById("id_container").innerHTML = righe_slide;
+
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+		showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		if (n > x.length) {
+			slideIndex = 1;
+		}
+		if (n < 1) {
+			slideIndex = x.length;
+		}
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		x[slideIndex - 1].style.display = "block";
+
+	}
+</script>
+
+</body>
+</html>
