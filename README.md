@@ -12,11 +12,11 @@ Each sentence in the original language is folllowed by its translation.
 
 ## Output files
 It creates two html output files:
-1. interactive bilingual text 
+1. interactive bilingual text:   
     each sentence of the source text is preceded by two buttons:
       * the first button (the red one) shows the translation of the sentence if pressed 
       * the second button (the green one) hide the source sentence if pressed
-2. printable bilingual text
+2. printable bilingual text:  
    each sentence is followed by its translation 
  
 ## Input
@@ -26,6 +26,13 @@ or from an existing one.
 
 BilingBuilder tries to syncronize the source and translation texts automatically, 
 but let the user to correct it if needed  (warnings are issued in case of doubts). 
+
+## How to use it
+It's better to have a look at the presentation and the user guides it's take only a few minutes.
+In a few words you have to  
+* download the **BilingBuilder** folder
+* run  **BilingBuilder.html** file 
+* follow the istructions 
 
 ## Privacy 
 * No files are sent to the web, 
@@ -42,17 +49,17 @@ You can find a presentation and 7 user guides in the  **BilingBuilder_Tutorial_e
 There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** folder
 
 ## Language of BilingBuilder
-As it is delivered all messages and written are provided in Italian and English, but you can add any languages 
-as it's explained in BilingBuilder_make__messages folder.
+As it is delivered all messages and written are provided in Italian and English, but you can add any languages  
+as it's explained in **BilingBuilder_make__messages** folder.
 
 The language used is the local one if available otherwise English is used.  But the user can change it pressing a button.
 
 ## Disclaimer
-My mother tongue is Italian, I know that the English I used is not so good.
+My mother tongue is Italian, I know that the English I use is not so good.
 If you like to change the English messages please:
 * change the file **BilingBuilder_msg_en.txt**  in the folder **BilingBuilder_make_messages** 
-* run **BilingBuilder_message_script_making.html**,  it write a script file in the download folder
-* copy it in the BilingBuilder folder and rename it to **BilingBuilder_txtmsg.js**
+* run **BilingBuilder_message_script_making.html**,  it writes a script file in the user download folder
+* copy it in the **BilingBuilder** folder and rename it to **BilingBuilder_txtmsg.js**
  
 
 
