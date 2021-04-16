@@ -1,6 +1,8 @@
 # BilingBuilder
 BilingBuilder creates bilingual interlinear, interactive and printable text  from any source got by copying and pasting.
+
 It splits texts in sentences and write  them in rows (one sentence, one row).
+
 Each sentence in the original language is folllowed by its translation.  
 
 ## Objective: 
@@ -21,5 +23,6 @@ It creates two html output files:
 Input is provided by the user by copy and paste.
 The translation text can be got from an automatic translator like Google's or  Microsoft's Bing 
 or from an existing one. 
+
 BilingBuilder tries to syncronize the source and translation texts automatically, 
-but let the user to correct it if needed  (warning are issued in case of doubts). 
+but let the user to correct it if needed  (warnings are issued in case of doubts). 
