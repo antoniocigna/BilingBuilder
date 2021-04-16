@@ -45,7 +45,8 @@ The code has been tested using:
 * Safari on Apple Notebook  
 
 ## Documentation
-You can find a presentation and 7 user guides in the  **BilingBuilder_Tutorial_en** folder 
+You can find a presentation and 7 user guides in the  **BilingBuilder_Tutorial_en** folder.
+
 There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** folder
 
 ## Language of BilingBuilder
