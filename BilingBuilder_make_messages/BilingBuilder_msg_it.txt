@@ -1,0 +1,141 @@
+(.001)) BilingBuilder_Tutorial_it/BilingBuilder_Tutorial_it.html
+(.002)) GUIDA
+(.003)) Esempio di Pagina Interattiva (Tedesco/Italiano)   
+(.004)) Esempio di Pagina Stampabile (Tedesco/Italiano)</a>   
+(.005)) Esempio di Pagina Interattiva (Latino/Italiano)   
+(.006)) Esempio di Pagina Stampabile (Latino/Italiano)   
+(.007)) Esempio di Pagina Interattiva per una poesia in italiano   
+(.008)) Esempio di Pagina Stampabile per una poesia in italiano</a>   
+(.009)) Incolla il testo in lingua <b>originale</b> qui sotto a sinistra e la <b>traduzione</b> a destra   
+(.010)) Incolla anche il <b>titolo</b> ed eventuale <b>indirizzo web</b> (non sono obbligatori, ma consigliati)<br>   
+(.011)) Premi il pulsante <b>ESEGUI</B>   
+(.012)) Controlla le eventuali segnalazioni, non &egrave; detto che siano davvero errori,  correggi se necessario <br>   
+(.013)) Visualizza le <b>anteprime</b> prodotte  ed eventualmente esegui il <b>download</b> dei relativi file   
+(.014)) <br>I problemi sono probabilmente dovuti ad una errata suddivisione automatica delle righe del testo.  
+	<br>Quando si preme per la prima volta il tasto ESEGUI, il testo viene diviso in frasi ed ogni frase viene riscritta in una sola riga  
+	 che inizia con un numero progressivo di 3 cifre preceduto da una parentesi aperta e un punto e seguito da due parentesi chiuse.
+	<br>Per esempio<br>&nbsp;&nbsp; &lpar;.023&rpar;&rpar; questa è una riga.   	
+	<br>Nelle esecuzioni successive alla prima,  la coppia parentesi aperta - punto è considerata l'inizio di una nuova riga a cui viene assegnato un nuovo progressivo.  
+	<br>Per esempio la riga   &lpar;.024&rpar;&rpar; frase uno &lpar;.frase due 
+	<br>diventa
+	<br>&nbsp;&nbsp;&nbsp;&lpar;.024&rpar;&rpar; frase uno   
+	<br>&nbsp;&nbsp;&nbsp;&lpar;.025&rpar;&rpar; frase due <br> 
+(.015)) Le righe possono essere spezzate o unite insieme.		
+(.016)) Una riga pu&ograve; essere spezzata inserendo una parentesi aperta seguita da un punto<B>  &lpar;.</B>    
+(.017)) Due righe consecutive possono essere unite  eliminando parentesi aperta, punto, numero e parentesi chiuse che precedono la seconda riga.   
+(.018)) <br>Per esempio per far diventare una sola le due righe:<br>&nbsp;&nbsp;&nbsp;&lpar;.024&rpar;&rpar; frase uno   
+	<br>&nbsp;&nbsp;&nbsp;&lpar;.025&rpar;&rpar; frase due <br>  è sufficiente eliminare &lpar;.025&rpar;&rpar; della seconda riga.     
+(.019)) indirizzo della pagina o url(facoltativo)   
+(.020)) Se in una coppia è segnalato un errore (per esempio lunghezza delle due righe molto diverso), 
+		<br> probabilmente una frase è stata spezzata erroneamente (es. un punto considerato di fine frase mentre in realtà serviva ad altro), 
+		per correggere occorre riunire due righe successive  eliminando parentesi aperta, punto, numero e parentesi chiuse che precedono la seconda riga.
+		<br>oppure due frasi consecutive sono state considerate una sola, in tal caso bisogna separarle inserendo la coppia parentesi punto
+		 (non occorre aggiungere un numero)    
+		<br><br> Premere il pulsante  <b>ESEGUI</b>  per confermare le modifiche       
+(.021)) 							<br>e rinumerare automaticamente le righe.    
+(.022)) 							<br>Premere il pulsante <b>Ripristina Testi</b> per eliminare tutte le modifiche e ripartire con i testi iniziali.    
+(.023)) nato a Canicatt&igrave;(Agrigento) in Sicilia, <br>vivo a Linarolo (Pavia) in Lombardia, 
+		<br>sposato, con una figlia, 
+		<br>ho lavorato per 3 decenni in informatica soprattutto sui mainframe,   
+		<br>ora sono felicemente pensionato.    
+(.024)) Per Creare un testo bilingue interlineare interattivo e stampabile in qualsiasi lingua   
+(.025)) titolo (facoltativo)   
+(.026)) Testo in lingua originale   
+(.027)) Testo Tradotto               
+(.028)) Il testo deve essere tradotto   
+(.029)) Il testo tradotto deve essere accoppiato all&#180;originale   
+(.030)) frase per frase          
+(.031)) riga per riga   
+(.032)) Separa i due testi in righe una per frase,\nnumera le righe,\nverifica le coppie di righe (originale e traduzione), costruisce i file di output  
+(.033))    
+(.034))    
+(.035)) Ripristina Testi   
+(.036)) Esegui      
+(.037)) annulla le eventuali modifiche eeguite e ricarica i testi originali    
+(.038)) annulla le eventuali modifiche eeguite e ricarica i testi originali  
+(.084)) File Prodotti
+(.085)) Descrizione
+(.086)) Anteprima
+(.087)) Download
+(.088)) Nome File
+(.089))   
+(.090)) Esempi di output 
+(.091)) Lingua dei messaggi 
+(.092)) DEMO 
+(.093)) Cosa fare 			
+(.094)) Errori di sincronizzazione 	
+(.095)) <br>ATTENZIONE<br><small>forse ci sono errori di allineamento</small>
+(.096)) Suggerimenti
+(.097)) coppia righe 
+(.098)) lunghezze delle righe molto diverse tra loro
+(.099)) origine
+(.100)) traduzione
+(.101)) esiste soltanto una versione
+(.102)) una delle due versioni contiene numeri non presenti nell'altra
+(.103)) una delle due versioni contiene 
+(.104)) non presente nell'altra
+(.105)) (1) pagina bilingue interlineare interattiva
+(.106)) (2) pagina bilingue interlineare stampabile
+(.107)) (3) file testo bilingue interlineare
+(.108)) (4) file csv lista parole usate nel testo 
+(.109)) Pagina <b>bilingue</b> interlineare  
+(.110)) Interattiva  
+(.111)) Il testo è diviso in coppie di righe, una in lingua originale e l\'altra in traduzione. 
+(.112)) Due pulsanti permettono di nascondere o far apparire una riga o entrambe.  
+(.113)) Questo file può essere usato per esercitarsi
+(.114)) nella comprensione di testi in un lingua straniera, 
+(.115)) nella ripetizione di frasi a memoria.  
+(.116)) Un possibile utilizzo potrebbe essere:  
+(.117)) Leggere una frase e tentare di indovinarne il significato.  
+(.118)) Premere il pulsante rosso per vedere la traduzione.  
+(.119)) Il pulsante verde serve a nascondere la versione in lingua originale,  
+(.120)) può essere usato per esercizi di ripetizione con o 
+(.121)) senza il suggerimento della frase tradotta.  
+(.122)) Modifica il colore dello sfondo, la grandezza e il colore dei caratteri
+(.123)) Il testo originale e la sua traduzione sono stati ripristinati al valore iniziale (tutte le modifiche sono state annullate) 
+(.124)) Testo originale e tradotto sono composti da <b>numeri diversi di righe</b>
+(.125)) ) diverso della Traduzione (
+(.126)) Click per <br>modificare 
+(.127)) colore dello sfondo  
+(.128)) colore dei caratteri
+(.129)) grandezza dei caratteri  		
+(.130)) parole
+(.131)) diverse  
+(.132)) frasi   
+(.133)) Versione Interattiva
+(.134)) Premi il pulsante rosso $$ per leggere la traduzione della frase
+(.135)) Premi il pulsante verde $$ per nascondere la frase in lingua originale
+(.136)) Il finale <b>_size1.0</b>.html dei nomi file permette all'utente di cambiare facilmente la grandezza dei caratteri dopo che il file è stato scritto. 
+	<br>Il numero dopo <b>size</b> è un moltiplicatore, rinominando il file e modificando questo numero,  modifichiamo la grandezza originale dei caratteri 
+	 (per es. <b>_size2.0.</b>html  raddoppia la grandezza). 
+	<br>Sono accettati valori numerici da 0.5 a 3.0
+(.137)) copia e incolla
+(.138)) titolo, indirizzo, testo originale, traduzione
+(.139)) e poi premi pulsante Esegui
+(.140)) CORREGGI
+(.141)) ANTEPRIMA
+(.142)) Se necessario
+(.143)) correggi
+(.144)) spostando, eliminando o aggiungendo le doppie parentesi
+(.145)) e poi premi il pulsante Esegui
+(.146)) CORREGGI
+(.147)) HOME
+(.148)) Testo in lingua originale   
+(.149)) Testo Tradotto 
+(.150)) incolla qui il titolo (facoltativo)
+(.151)) incolla qui l'indirizzo della pagina (facoltativo)
+(.152)) incolla qui il Testo in lingua originale
+(.153)) incolla qui la Traduzione
+(.154)) Premi questo pulsante  
+(.155)) se vuoi modifiare i colori dello sfondo o dei caratteri
+(.156)) Nel caso la grandezza dei caratteri non fosse reputata soddisfacente per la stampa,  
+	&egrave; possibile modificarla cambiando nome al file.
+	<br>Se il nome file termina con <b>_size</b>XX<b>.html</b> dove XX è un numero, 
+	questo numero moltiplica la grandezza dei caratteri.
+	<br>per es. modificando la parte finale del nome in _size2.0.html la raddoppiamo 
+(.157)) testo bilingue ottenuto  dall'esecuzione del file
+
+
+
+
+
