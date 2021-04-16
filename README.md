@@ -3,7 +3,7 @@ BilingBuilder creates bilingual interlinear, interactive and printable text  fro
 It splits texts in sentences and write  them in rows (one sentence, one row).
 Each sentence in the original language is folllowed by its translation.  
 
-##Objective: 
+## Objective: 
   BilingBuilder is meant to be used as a learning tool:
   1. to improve the reading understanding in a foreign language 
   2. to help to memorize  pieces of poetry or text by hiding and showing lines.   
