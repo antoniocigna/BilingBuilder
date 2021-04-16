@@ -26,3 +26,34 @@ or from an existing one.
 
 BilingBuilder tries to syncronize the source and translation texts automatically, 
 but let the user to correct it if needed  (warnings are issued in case of doubts). 
+
+## Privacy 
+* No files are sent to the web, 
+* No links to any sites, internet isn't used at all 
+* all the code is in your computer and  all the files are written in the download folder of your computer.  
+
+## Environment
+The code as been tested using:
+* Chrome, Edge, Firefox in Window 10 desktop 
+* Safari on Apple Notebook  
+
+## Documentation
+You can find a presentation and 7 user guides in the  **BilingBuilder_Tutorial_en** folder 
+There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** folder
+
+## Language of BilingBuilder
+As it is delivered all messages and written are provided in Italian and English, but you can add any languages 
+as it's explained in BilingBuilder_make__messages folder.
+
+The language used is the local one if available otherwise English is used.  But the user can change it pressing a button.
+
+## Disclaimer
+My mother tongue is Italian, I know that the English I used is not so good.
+If you like to change the English messages please:
+* change the file **BilingBuilder_msg_en.txt**  in the folder **BilingBuilder_make_messages** 
+* run **BilingBuilder_message_script_making.html**,  it write a script file in the download folder
+* copy it in the BilingBuilder folder and rename it to **BilingBuilder_txtmsg.js**
+ 
+
+
+
