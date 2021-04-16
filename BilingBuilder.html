@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Uno strumento per creare facilmente testi con traduzione interlineare" />
+        <meta name="keywords" content="HTML,CSS,JavaScript, bilingue, parallelo, interlineare, interattiva" />
+        <meta name="author" content="Antonio Cigna" />
+        <meta name="date" content="24 Agosto 2020" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BilingBuilder</title>
+        <link rel="stylesheet" href="BilingBuilder_style.css">
+        <style>
+            /*
+            // il contenuto di questo style è copiato  dal file BilingBuilder.html al file html interattivo prodotto
+            */ 
+            html, body {
+            height: 100%;
+            margin: 0;
+            }
+            .full-height {
+            height: 100%;
+			width: 100%;
+            background: green;
+            }
+            div.quadro1 {
+            width: 99%; 
+            height: 98%; 
+            border: 1px solid black;  
+			background-color: yellow;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;
+            top: 1%;
+            }
+            div.quadrox20 {
+            width:95%; 
+            height:20%; 
+            border: 1px solid black;  	
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 0%;
+            overflow:auto;
+            }
+            div.quadrox21 {
+            width:100%; 
+            border: 1px solid black;  	
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 0%;
+            overflow:auto;
+            }
+            .overauto {
+            overflow:auto;
+            }
+            .overhidden {
+            overflow:hidden;
+            }
+            div.quadro2 {
+            width:95%; 
+            height:90%; 
+            border: 1px solid black;  
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 5%;
+            }
+            .goto_page {
+            vertical-align: middle;
+            text-align:     center;
+            background-color: #fefbd8; 
+            border-radius:   2em;
+            box-shadow: 0.5em 0.5em 0.5em 0 #808080;
+            color: black;
+            display: inline-block;
+            margin: 0.3em 0.5em;
+            cursor: pointer;
+            opacity: 1;
+            width: 10%;
+            font-weight: bold;
+            font-size:1.0em;
+            }
+            .goto_page:hover {
+            background-color: coral;
+            }
+            .goto_prev {
+            position: absolute; 
+            bottom:  0.5%;
+            left: 5%;
+            }
+            .goto_next {
+            position: absolute;
+            bottom: 0.5%;
+            right: 5%; 
+            }
+            body {
+            background-color:  #fefbd8;
+            }
+            .cl_nascosto { display: none;         }
+            .cl_visibile { display: inline-block; }
+            .cl_trad_visibile {
+            display: inline-block;
+            background-color: yellow;
+            color: black;
+            font: italic;
+            font-size: 0.8em;
+            }
+            .cl_evidenzia {
+            display:inline-block;
+            background-color: pink;
+            color: black;
+            }
+            .c_green {  background-color: green;  }
+            .c_red   {  background-color: red;    }
+            .f_white {  color: white;             }
+            .c_buttColor1{
+            border: medium solid black;	
+            box-shadow: 0.2em 0.2em 0.2em 0 red; 
+            border-radius: 1em;
+            margin: 0.5em 0.5em;
+            font-weight: bold;
+            vertical-align: middle;
+            text-align:center;
+            display: inline-block;	
+            cursor: pointer;
+            opacity: 1;    
+            }
+            .c_buttColor1:hover {
+            background-color: grey;
+            }
+            .cerchio_button {
+            border: thin solid black;	
+            border-radius: 50%;
+            box-shadow: 0.4em 0.2em #808080;
+            margin: 0.1em 0.4em 0.1em 0.4em;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap
+            }
+            .cerchio_button:hover {
+            background-color: coral;
+            }
+            table {
+            vertical-align: top;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1em;
+            }
+            th,
+            td {
+            vertical-align: top;
+            text-align: left;
+            padding: 0 0.3em 0;
+            }  
+			
+		.color_quadro1 {
+			background-color: brown;
+		}	
+		.color_quadro2 {
+			background-color: crimson;  /* red */
+		}
+.bgIMG {
+  /* The image used */
+  /*background-image: url("papà a Canicatti 1976 0002.jpg");*/
+  background-image: url("BilingBuilder_fig1_canicatti.jpg");
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height:25%;
+  border: 3px solid #73AD21;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+		
+        </style>
+    </head>
+    <body>	
+        <!--  PAGINA UNO -->
+        <div id="id_box10" class="full-height">
+            <div   class="quadro1  bgIMG">
+                <div id="id_quadro21"    class="quadro2 overhidden">
+                    <div  style="margin: auto; text-align:center;font-size:1em;">
+                        <div id="id_ch_lang" style="margin:auto; text-align:center;fontSize:2em; color:red;" >
+                            <!-- attenzione le righe radio che seguono solo soltanto come memo, sono rimpiazzate in "BilingBuilderSettingMsg.js --> 
+                            <input type="radio"  id="r_lingua_it" name="radio_lingua"   onclick='msgSetting( getAllMsgInLang_xx("it") );' />Italiano							
+                            <input type="radio"  id="r_lingua_en" name="radio_lingua"   onclick='msgSetting( getAllMsgInLang_xx("en") );' />English	
+                        </div>
+                    </div>
+                    <div   style="margin:auto; text-align:center;width=100%;">
+                        <div  style="margin:auto; text-align:center;width=100%;font-size:7em;   text-shadow: 3px 1px grey  ">
+                            BilingBuilder
+                        </div>
+                        <div  class="tooltip" style="text-align:center;width=100%;font-size:1.2em;">
+                            Antonio Cigna
+                            <span class="tooltiptext" style="text-align:center;width=400%;" >
+                            <span id='id_m023'>nato a Canicatt&igrave; in Sicilia, 
+                            <br>sposato, con una figlia,<br>felicemente pensionato<br>vivo a Linarolo in Lombardia
+                            </span>
+                            </span>
+                        </div>
+                        <br>
+                        2021
+                    </div>
+                    <h1 id="m002_h001"  style="text-align:center;"><span id='id_m024'>Per Creare un testo bilingue interlineare interattivo e stampabile in qualsiasi lingua</span></h1>
+                  
+                    <div  style="margin: auto; text-align:center;width:5%;font-size:0.8em;">
+						<a     id="id_m001" href="BilingBuilder_Tutorial_en/BilingBuilder_Tutorial.html"    target="_blank">	
+                        <span  id="id_m002"  class="c_button1" style="font-size:1.0em; text-align:center; with:100%;color:black;" >Tutorial in English Language</span>	
+						</a>
+                        <button style="font-size:1.0em; text-align:center; with:100%;color:black;"
+                            class="c_button1" 
+                            onclick="onclick_0forza_input_prova('id_titolo', 'id_urlpagina', 'id1_txt_pagOrigP', 'id1_txt_pagTradP');" 	
+                            >
+                        <span id="id_m092">
+                        DEMO
+                        </span>
+                        </button>		
+                    </div>
+                    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    <br>
+                    <br>
+                    <div style="margin: auto; text-align:center; vertical-align:middle; font-size:1.5em;color:black;">
+                        <span id="id_copypaste" style="font-size:2.0em;"><b><span id="id_m137">copia e incolla</span></b></span>
+                        <br> 
+                        <span id="id_m138">titolo, indirizzo, testo originale, traduzione </span>
+                        <br><span id="id_m139">e poi premi pulsante Esegui</span>					
+                    </div>
+                    <p id="m050_testo1"></p>
+                    <table style="width:100%;">
+                        <tr>
+                            <td id="m051_provatxt1" style="width:28em;text-align:right;">                       
+                            </td>
+                            <td>
+                                <input id="id_titolo" type="text"  style="text-align:center; font-size:1.5em; font-weight: bold; width: 70%;"
+                                    placeholder="incolla qui il titolo (facoltativo)">      <!-- id_m150     -->
+                                <BR>  			   
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="m012_scrivi_http"  style="width:28em;text-align:right;">                  
+                            </td>
+                            <td>
+                                <input id="id_urlpagina" type="text"  style="text-align:center; font-size: 1.5em; width: 70%;"
+                                    placeholder="incolla qui l'indirizzo della pagina (facoltativo)">     <!-- id_m151     -->
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    <table style="border: 1px solid; border-collapse: collapse;   text-align:center;   width: 100%;">
+                        <tr>
+                            <td>&nbsp;</td>
+                            <th  style="text-align: center; border: 0px; width:50%">
+                                <span id="m021x_sez1or"  style="font-size:2em;"><span id="id_m026">Testo in lingua originale</span></span>
+                            </th>
+                            <td>&nbsp;</td>
+                            <th  style="text-align: center; border: 0px; width:50%;">
+                                <span id="m021x_sez1tr"  style="font-size:2em;"><span id='id_m027'>Traduzione</span></span>	             
+                            </th>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td  style="text-align: center; border: 0px;">
+                                <!-- attenzione se metti qualcosa anche soltanto uno spazio prima della fine </ textarea allora il placeholder viene annullato -->
+                                <textarea  style="text-align:center; border: 0; width:100%; font-size:1.5em;" id="id1_txt_pagOrigP"  
+                                    placeholder="incolla qui il Testo in lingua originale"></textarea>      <!-- id_m152     -->
+                            </td>
+                            <td>&nbsp;</td>
+                            <td  style="text-align: center; border: 0px;">
+                                <textarea  style="text-align:center;  border: 0;width:100%; font-size:1.5em;" id="id1_txt_pagTradP"  
+                                    placeholder="incolla qui la Traduzione"></textarea>       <!-- id_m153     -->
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                    <!--  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->	
+                    <div style="margin: auto; text-align:center; font-size:1.5em;">
+                        <br>
+                        <span id='id_m028'>I testi (originale e traduzione) devono essere suddivisi per frase   </span>
+                        <input id="id_poesia_NO" type="radio"  name="poesia" value="no" onclick='highlight_text_split()'  checked=checked  >
+                        <span id='id_m030'>SI</span>  
+                        &nbsp; &nbsp; 
+                        <input id="id_poesia_SI" type="radio"  name="poesia" value="yes" onclick='highlight_text_split()'>
+                        <span id='id_m031'>NO</span>
+                    </div>
+                    <p id="id_end_quadro21" ></p>
+                    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+                </div>
+                <!--
+                    <button class="goto_page goto_prev" onclick='gotobox("id_page2")'>vai a pagina0</button>    
+                             <button class="goto_page goto_next" onclick='gotobox("id_box15")'>pagina seguente</button> 
+                    -->
+                <button id="id_butt1_1"  class="goto_page goto_next" 
+                    onclick="onclick_1ottiene_righe_Orig_Trad_first(
+                    'id_poesia_NO', 
+                    'id1_txt_pagOrigP', 'id1_txt_pagTradP', 
+                    'id2_txt_pagOrigP', 'id2_txt_pagTradP', 
+                    'id_box10', 'id_box20', 'id_box30' 
+                    ) " 	
+                    title="Separa i due testi in righe una per frase,
+                    numera le righe,
+                    verifica le coppie di righe (originale e traduzione),
+                    costruisce i file di output"	
+                    >	  
+                <span id='id_m036_1' >Esegui</span><span style="font-size:2em;">&#x1f8a9</span>
+                </button>  
+				
+				
+            </div>			
+        </div>
+        <!--  FINE PAGINA UNO -->
+		
+        <!-- PAGINA Uno.Cinque -->
+        <div id="id_box15" class="full-height" style="display:none;">
+            <div   class="quadro1  bgIMG">
+                <div id="id_quadro22"   class="quadro2  overhidden">   <!---  overhidden -->
+                    <!-- pink -->  
+                    <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+                    <div style="margin: auto; text-align:center; vertical-align:middle; font-size:1.5em;">
+                        <span id="id_m142">Se necessario</span> <br>
+						<b><span id="id_m143">correggi</span></b><br>
+						<span id="id_m144">spostando, eliminando o aggiungendo le doppie parentesi</span><br>
+						<span id="id_m145">e poi premi il pulsante Esegui</span>
+                    </div>
+                    <table style="border: 1px solid; border-collapse: collapse;   text-align:center;   width: 100%;">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th id="id_q22_th" style="text-align: center; border: 0px; width:50%">
+                                <span id="m021_sez1or"  style="font-size:2em;"><span id="id_m148">Testo in lingua originale</span></span>
+                                <br>&nbsp; 
+                            </th>
+                            <th>&nbsp;</th>
+                            <th  style="text-align: center; border: 0px; width:50%;">
+                                <span id="m021_sez1tr"  style="font-size:2em;"><span id='id_m149'>Traduzione</span></span>	  
+                                <br>&nbsp; 
+                            </th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td  style="text-align: center; border: 0px;">					 
+                                <textarea  style="border: 0; width:100%; font-size:1.5em;" id="id2_txt_pagOrigP"></textarea>
+                            </td>
+                            <td>&nbsp;</td>
+                            <td  style="text-align: center; border: 0px;">
+                                <textarea  style="border: 0;width:100%;font-size:1.5em;"   id="id2_txt_pagTradP" ></textarea>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <button id="id_butt1_3" class="goto_page goto_prev" 
+                    onclick="onclick_1ottiene_righe_Orig_Trad_first(
+                    'id_poesia_NO', 
+                    'id1_txt_pagOrigP', 'id1_txt_pagTradP', 
+                    'id2_txt_pagOrigP', 'id2_txt_pagTradP', 
+                    'id_box15', 'id_box10' 
+                    ) " 	
+                    title="annulla le eventuali modifiche eeguite e ricarica i testi originali" 
+                    ><span style="font-size:2em;">&#x1f8a8</span>
+                <span id='id_m035'>Annulla variazioni</span>	
+                </button>
+                <br>				
+                <button id="id_butt1_2"  class="goto_page goto_next" 
+                    onclick="onclick_1ottiene_righe_Orig_Trad_other(
+                    'id_poesia_NO', 
+                    'id2_txt_pagOrigP', 'id2_txt_pagTradP',
+                    'id_box15', 'id_box20', 'id_box30'
+                    )"   	
+                    title="Separa i due testi in righe una per frase,
+                    numera le righe,
+                    verifica le coppie di righe (originale e traduzione),
+                    costruisce i file di output"	
+                    >	  
+                <span id='id_m036_2' >Esegui</span><span style="font-size:2em;">&#x1f8a9</span>
+                </button> 
+            </div>
+        </div>
+        <!-- FINE PAGINA Uno.Cinque -->
+        <!-- PAGINA DUE -->
+        <div id="id_box20" class="full-height" style="display:none;">
+            <div   class="quadro1 bgIMG">
+				
+                <div class="quadro2 overauto" >                    
+                    <div  id="id_istruzioni"  style="font-size:1.8em;width:100%;"></div>
+                </div>
+				
+                <button id="id_bu21" class="goto_page goto_prev" onclick='gotobox("id_box20", "id_box15")'><span style="font-size:2em;">&#x1f8a8</span><span id="id_m140">Correggi</span></button>    
+                <button id="id_bu22" class="goto_page goto_next" 
+                    onclick='gotobox("id_box20", "id_box30")'><span id="id_m141">Preview</span><span style="font-size:2em;">&#x1f8a9</span></button>   
+            </div>
+        </div>
+        <!-- FINE PAGINA DUE -->
+        <!---  PAGINA TRE -->
+        <div id="id_box30" class="full-height"  style="display:none;">
+            <div   class="quadro1  bgIMG">
+                <div class="quadro2">
+                    <div id="menu_preview" class="cl_nascosto"  
+                        style="vertical-align:top; 
+                        border-collapse:  collapse;  
+                        width:100%;height:100%;" >
+                        <!-- <tr   style="min-width:100%;">  -->
+                        
+                        <div id="id_menu2" style="font-size:1.3em;background-color:mintcream; height:20%;" >							
+                            <div>
+								<b><span id="sez1_titolo2"  style="font-size:2.0em;"><b><span id="id_m084">File Prodotti</span></b></span></b><br>
+                                <table style="vertical-align:top;  border-collapse: collapse; width:100%"  >
+                                    <tr  style="vertical-align:top;  border-collapse: collapse;  width:100%;"  >
+                                        <th id="id_m085" style="text-align:left;    " >Descrizione</th>
+                                        <th id="id_m086" style="text-align:center;  " >Anteprima</th>
+                                        <th id="id_m087" style="text-align:center;  " >Download</th>
+                                        <td style="text-align:left; " >
+                                            <b><span id="id_m088">Nome File</span></b>
+                                            <div  class="tooltip">
+                                                <b>(?)</b>
+                                                <!--  <span class="tooltiptext" style="top:100%;width:40em;margin-left: -20em; position: absolute;background-color: black; color: #fff;" >-->
+                                                <span class="tooltiptext"  style="top:4em;">  	
+                                                <span  id="id_m136">
+                                                Termina con <b>_size1.0.html</b> dove il numero dopo <b>size</b> indica la grandezza del carattere, 
+                                                <br>rinominando il file si può modificare questa grandezza (per es. _size2.0.html raddoppia la grandezza) 
+                                                <br>Sono accettati valori numerici da 0.5 a 3.0
+                                                </span>
+                                                </span>
+                                            </div>                                            
+                                        </td>
+                                    </tr>
+									
+                                    <tr style="vertical-align:top; border-collapse: collapse;  width:100%;" >
+                                        <td id="filedescr1"></td>
+                                        <td   style="vertical-align:top; text-align: center;width:7%;" >
+                                            <input type="radio" id="radout1" name="radio_preview" onclick="onclickview1(this,'1')" >
+                                        </td>
+                                        <td style="vertical-align:top;  text-align: center; width:7%;" >
+                                            <input type="checkbox" name="checkbox" onclick="onclickdown1(this,'1')"   >					
+                                        </td>
+                                        <td id="filename1"></td>
+                                    </tr>									
+                                    <tr  style="vertical-align:top; border-collapse: collapse;  width:100%;" >
+                                        <td id="filedescr2"></td>
+                                        <td  style="vertical-align:top; text-align: center;" >
+                                            <input type="radio"  id="radout2" name="radio_preview" onclick="onclickview1(this,'2')" >
+                                        </td>
+                                        <td  style="vertical-align:top;  text-align: center;" >
+                                            <input type="checkbox" name="checkbox" onclick="onclickdown1(this,'2')"   >					
+                                        </td>
+                                        <td id="filename2"></td>
+                                    </tr>								
+									<tr id="fileout3" style="vertical-align:top; border-collapse: collapse;  width:100%; display:none;" >
+                                        <td id="filedescr3"></td>
+                                        <td  style=" vertical-align:top; text-align: center;" >
+                                            <input type="radio"  id="radout3"  name="radio_preview" onclick="onclickview1(this,'3')" >
+                                        </td>
+                                        <td  style="vertical-align:top;  text-align: center;" >
+                                            <input type="checkbox" name="checkbox" onclick="onclickdown1(this,'3')"   >					
+                                        </td>
+                                        <td id="filename3"></td>
+                                    </tr>									
+									<tr id="fileout4" style="vertical-align:top; border-collapse: collapse;  width:100%; display:none;" >
+                                        <td id="filedescr4"></td>
+                                        <td  style="vertical-align:top; text-align: center;" >
+                                            <input type="radio"  id="radout4" name="radio_preview" onclick="onclickview1(this,'4')" >
+                                        </td>
+                                        <td  style=" vertical-align:top;  text-align: center;" >
+                                            <input type="checkbox" name="checkbox" onclick="onclickdown1(this,'4')"   >					
+                                        </td>
+                                        <td id="filename4"></td>
+                                    </tr>									
+                                </table>
+                            </div>
+                            <br><br>  
+                        </div>
+                        <div  id="id_prev1" class="quadrox21 overauto"  style="top:0%;height:80%;">
+                            <div id="my_preview"   style="text-align:left;font-size:1em;"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="goto_page goto_prev" onclick='gotobox("id_box30", "id_box15")'><span style="font-size:2em;">&#x1f8a8</span><span id="id_m146">Correggi</span></button>    
+                <button class="goto_page goto_next" onclick='gotobox("id_box30", "id_box10")'><span id="id_m147">HOME</span><span style="font-size:2em;">&#x1f8a9</span></button>    		
+            </div>
+        </div>
+        <!--- fine pagina QUATTRO --> 
+		
+	
+		
+		
+		
+        <!--  la riga che segue Ã¨ solo x prova ELIMINARE   insieme all'uso di get_input_prova()  -->
+        <p id="mytest1"></p>
+        <script src="BilingBuilder_input_prova.js"  ></script> 	
+        <script src="BilingBuilder_txtmsg.js"       ></script>		
+        <script src="BilingBuilderSettingMsg.js"    ></script>		
+        <script src="BilingBuilder_script01.js"     ></script>  	  	
+        <script id="id_scr_lev2">
+            //------------------------------------------------------- 
+            // le funzioni che seguono sono copiate dal file BilingBuilder.html al file html interattivo prodotto
+               //----------------------------		
+               function lev2x_traduz_si_no(id_frase) {
+                var objOrig = document.getElementById("X" + id_frase);
+                var objTrad = document.getElementById("T" + id_frase);
+               
+                if (objTrad.className == "cl_trad_visibile") { // se traduzione visibile, nasconde la traduzione    			
+                    objTrad.className = "cl_nascosto";
+                    objOrig.className = "cl_visibile";
+                } else { // se trad. nascosta, la rende visibile           
+                    objTrad.className = "cl_trad_visibile";
+                    objOrig.className = "cl_evidenzia";
+                }
+                return;
+               }
+               //---------------------------	
+               function lev2x_orig_si_no(id_frase ) {              
+               	var objOrig = document.getElementById( "X" + id_frase ) ;      
+               	if ((objOrig.className == "cl_visibile") || (objOrig.className == "cl_evidenzia")) { // se traduzione  visibile, nasconde la traduzione 
+               		objOrig.className = "cl_nascosto";        
+               	} else { // se  nascosta, la rende visibile           
+               		objOrig.className = "cl_visibile";    
+               	}                                              
+                }  
+			    function fun_colori_lev2() {
+					if (document.getElementById("id_colori"   ).className == "cl_nascosto") {
+						document.getElementById("id_colori"   ).className  = "cl_visibile";
+						document.getElementById("id_inter_beg").style.display = "none";
+					} else {
+						document.getElementById("id_colori"   ).className  = "cl_nascosto";
+						document.getElementById("id_inter_beg").style.display = "inline-block";
+					}			
+				}
+			   
+        </script>
+    </body>
+</html>
