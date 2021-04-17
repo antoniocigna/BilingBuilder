@@ -53,7 +53,7 @@ There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** fol
 As it is delivered all messages and written are in Italian and English languages, but you can add any languages  
 as it's explained in **DEV/toBuildUpdate_messages** folder.
 
-The language used is the local one if available otherwise English is used.  But the user can change it pressing a button.
+The language used is the local one if available otherwise English is used.  But the user can change it by pressing a button.
 
 ## DEV folder
 here is something useful to anybody wants to update this application. 
