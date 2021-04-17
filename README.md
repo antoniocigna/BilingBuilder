@@ -50,8 +50,8 @@ You can find a presentation and 7 user guides in the  **BilingBuilder_Tutorial_e
 There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** folder
 
 ## Language of BilingBuilder
-As it is delivered all messages and written are provided in Italian and English, but you can add any languages  
-/as it's explained in **DEV/toBuildUpdate_messages** folder.
+As it is delivered all messages and written are in Italian and English languages, but you can add any languages  
+as it's explained in **DEV/toBuildUpdate_messages** folder.
 
 The language used is the local one if available otherwise English is used.  But the user can change it pressing a button.
 
