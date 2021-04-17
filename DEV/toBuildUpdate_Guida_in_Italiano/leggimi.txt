@@ -1,0 +1,7 @@
+
+La presentazione e le guide sono file html che usano file png.  
+
+Ogni file png è stato ottenuto prendendo uno screenshot durante l'esecuzione di BilingBuilder 
+o di un file html creato proprio per questo scopo.
+ 
+Le copertine sono state ottenute con lo stesso metodo eseguendo il file  itPresent...html. 
