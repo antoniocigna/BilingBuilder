@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Uno strumento per creare facilmente testi con traduzione interlineare" />
+        <meta name="keywords" content="HTML,CSS,JavaScript, bilingue, parallelo, interlineare, interattiva" />
+        <meta name="author" content="Antonio Cigna" />
+        <meta name="date" content="24 Agosto 2020" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BilingBuilder</title>
+        <style>
+            /*
+            // il contenuto di questo style è copiato  dal file BilingBuilder.html al file html interattivo prodotto
+            */ 
+            html, body {
+            height: 100%;
+            margin: 0;
+            }
+            .full-height {
+            height: 100%;
+			width: 100%;
+            background: green;
+            }
+            div.quadro1 {
+            width: 99%; 
+            height: 98%; 
+            border: 1px solid black;  
+			background-color: yellow;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;
+            top: 1%;
+            }
+            div.quadrox20 {
+            width:95%; 
+            height:20%; 
+            border: 1px solid black;  	
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 0%;
+            overflow:auto;
+            }
+            div.quadrox21 {
+            width:100%; 
+            border: 1px solid black;  	
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 0%;
+            overflow:auto;
+            }
+            .overauto {
+            overflow:auto;
+            }
+            .overhidden {
+            overflow:hidden;
+            }
+            div.quadro2 {
+            width:95%; 
+            height:90%; 
+            border: 1px solid black;  
+			background-color:  #fefbd8;
+            margin: auto; 
+            vertical-align:middle; 
+            position: relative;		  
+            top: 5%;
+            }
+            .goto_page {
+            vertical-align: middle;
+            text-align:     center;
+            background-color: #fefbd8; 
+            border-radius:   2em;
+            box-shadow: 0.5em 0.5em 0.5em 0 #808080;
+            color: black;
+            display: inline-block;
+            margin: 0.3em 0.5em;
+            cursor: pointer;
+            opacity: 1;
+            width: 10%;
+            font-weight: bold;
+            font-size:1.0em;
+            }
+            .goto_page:hover {
+            background-color: coral;
+            }
+            .goto_prev {
+            position: absolute; 
+            bottom:  0.5%;
+            left: 5%;
+            }
+            .goto_next {
+            position: absolute;
+            bottom: 0.5%;
+            right: 5%; 
+            }
+            body {
+            background-color:  #fefbd8;
+            }
+            .cl_nascosto { display: none;         }
+            .cl_visibile { display: inline-block; }
+            .cl_trad_visibile {
+            display: inline-block;
+            background-color: yellow;
+            color: black;
+            font: italic;
+            font-size: 0.8em;
+            }
+            .cl_evidenzia {
+            display:inline-block;
+            background-color: pink;
+            color: black;
+            }
+            .c_green {  background-color: green;  }
+            .c_red   {  background-color: red;    }
+            .f_white {  color: white;             }
+            .c_buttColor1{
+            border: medium solid black;	
+            box-shadow: 0.2em 0.2em 0.2em 0 red; 
+            border-radius: 1em;
+            margin: 0.5em 0.5em;
+            font-weight: bold;
+            vertical-align: middle;
+            text-align:center;
+            display: inline-block;	
+            cursor: pointer;
+            opacity: 1;    
+            }
+            .c_buttColor1:hover {
+            background-color: grey;
+            }
+            .cerchio_button {
+            border: thin solid black;	
+            border-radius: 50%;
+            box-shadow: 0.4em 0.2em #808080;
+            margin: 0.1em 0.4em 0.1em 0.4em;
+            display: inline-block;
+            vertical-align: middle;
+            overflow: hidden;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            white-space: nowrap
+            }
+            .cerchio_button:hover {
+            background-color: coral;
+            }
+            table {
+            vertical-align: top;
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 1em;
+            }
+            th,
+            td {
+            vertical-align: top;
+            text-align: left;
+            padding: 0 0.3em 0;
+            }  
+			
+		.color_quadro1 {
+			background-color: brown;
+		}	
+		.color_quadro2 {
+			background-color: crimson;  /* red */
+		}
+.bgIMG {
+  /* The image used */
+ 
+  background-image: url("IMG/f05_canicatti.jpg");
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  height:25%;
+  border: 3px solid #73AD21;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+		
+        </style>
+    </head>
+    <body>	
+		
+	
+        <div id="id_box10" class="full-height" >
+            <div   class="quadro1 bgIMG">				
+                <div class="quadro2 overauto" >  
+						 <div   style="margin:auto; text-align:center;width=100%;">
+                        <div  style="margin:auto; text-align:center;width=100%;font-size:7em;   text-shadow: 3px 1px grey  ">
+                            BilingBuilder
+                        </div>
+                        <div  class="tooltip" style="text-align:center;width=100%;font-size:1.2em;">
+                            Antonio Cigna                            
+                            </span>
+                        </div>
+                        <br>
+                        2021
+                    </div>
+				
+					<div  style="margin:auto; text-align:center; width:100%; color:blue; ">	
+							<div style="font-size:4em; " > 
+							<br>
+							<b>Guida</b>							
+						</div>	
+						<br>
+						<div style="font-size:3em; color:blue; " > 
+								<b>2</b>
+						</div>
+						<div style="font-size:3em; color:black; " > 
+								Per creare file bilingui<br> usando 								
+						</div>	
+						
+						<div style="font-size:3em; " > 
+								<b>Il traduttore <b>Bing</b> di <b>Microsoft</b>
+						</div>	
+					</div>
+				</div>				
+            </div>
+        </div>
+		
+	
+    </body>
+</html>
