@@ -60,7 +60,7 @@ here is something useful to anybody wants to update this application.
 The most important is the **toBuildUpdate_messages**  folder.
 
 My mother tongue is Italian, my English is not so good, so if you want to change the English messages please:
-* change the file **BilingBuilder_msg_en.txt**  in the folder ****DEV/toBuildUpdate_messages** 
+* change the file **BilingBuilder_msg_en.txt**  in the folder **DEV/toBuildUpdate_messages** 
 * run **BilingBuilder_message_script_making.html**,  it writes a script file in the user download folder
 * copy it in the **BilingBuilder** folder and rename it to **BilingBuilder_txtmsg.js**
  
