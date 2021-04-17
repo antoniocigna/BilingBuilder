@@ -51,13 +51,16 @@ There is also an Italian version in the  **BilingBuilder_Guida_in_Italiano** fol
 
 ## Language of BilingBuilder
 As it is delivered all messages and written are provided in Italian and English, but you can add any languages  
-as it's explained in **BilingBuilder_make__messages** folder.
+/as it's explained in **DEV/toBuildUpdate_messages** folder.
 
 The language used is the local one if available otherwise English is used.  But the user can change it pressing a button.
 
-## Disclaimer
-My mother tongue is Italian, I know that the English I use is not so good, so if you want to change the English messages please:
-* change the file **BilingBuilder_msg_en.txt**  in the folder **BilingBuilder_make_messages** 
+## DEV folder
+here is something useful to anybody wants to update this application. 
+The most important is the **toBuildUpdate_messages**  folder.
+
+My mother tongue is Italian, my English is not so good, so if you want to change the English messages please:
+* change the file **BilingBuilder_msg_en.txt**  in the folder ****DEV/toBuildUpdate_messages** 
 * run **BilingBuilder_message_script_making.html**,  it writes a script file in the user download folder
 * copy it in the **BilingBuilder** folder and rename it to **BilingBuilder_txtmsg.js**
  
