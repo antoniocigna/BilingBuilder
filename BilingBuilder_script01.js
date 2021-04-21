@@ -948,6 +948,8 @@ function crea_anteprima_NUOVO(righeOr, righeTr, tutto_txt_orig) {
 	//var winHead = prologo_lev2( titolo_testo,  prefisso_file_css_script); 
 	
     html_bil_prt =  '<!DOCTYPE html>\n<html>\n<head>\n<meta charset=\"UTF-8\"/>\n' + 
+			'<meta name="author"   content="BilingBuilder" />  \n' +
+			'<meta name="date"     content="' + new Date() +  '" />  \n' +
 			'<meta name="viewport" content="width=device-width, initial-scale=1"> \n' + 
 			'<title>' + titolo_testo + '</title>\n';    
  
